@@ -4,14 +4,23 @@
     {
         static void Main(string[] args)
         {
-            int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+            Console.WriteLine("Введите размер массива: ");
+            int N = int.Parse(Console.ReadLine());
+            int[] n = new int[N];
+            Console.WriteLine("Введите элемент массива: ");
+            for (int i = 0; i < N; i++)
+            {
+                Console.Write($"Элемент {i + 1}: " );
+                n[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Четные числа в порядке убывания:");
             int count = 0;
 
-            for (int i = array.Length - 1; i >= 0; i--) // Проходим по массиву в обратном порядке, начиная с последнего элемента
+            for (int i = N - 1; i >= 0; i--) // Проходим по массиву в обратном порядке, начиная с последнего элемента
             {
-                if (array[i] % 2 == 0)   // Проверяем, является ли текущий элемент четным
+                if (n[i] % 2 == 0)   // Проверяем, является ли текущий элемент четным
                 {
-                    Console.WriteLine("Индекс: " + i + ", Число: " + array[i]);  // Выводим индекс и значение четного числа
+                    Console.WriteLine("Число: " + n[i]);  // Выводим значение четного числа
                     count++; // Увеличиваем счетчик четных чисел
                 }
             }
