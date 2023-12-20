@@ -442,33 +442,9 @@ namespace PZ_16
                         LoadProgress(); // Загрузка последней игры
                         Move(); // Начало движения игрока
                         break;
-                    case ConsoleKey.Enter: // Обработка выбранного пункта меню
-                        HandleMenuSelection(); // Обработка выбранного пункта меню
-                        break;
                 }
             } while (key.Key != ConsoleKey.Enter); // Повторять цикл пока не будет нажата клавиша Enter
         }
-        static void HandleMenuSelection() // Передача и открытие функций
-        {
-            Console.Clear(); // Очистка консоли
-            switch (selectedMenuItem) // В зависимости от выбранного пункта меню
-            {
-                case 0: // Пункт меню "Создать новую карту"
-                    GenerationMap(); // Создание новой карты
-                    break;
-                case 1: // Пункт меню "Загрузить последнюю игру"
-                    Console.WriteLine("Выполняется загрузка..."); // Отображение сообщения о загрузке
-                    LoadProgress(); // Загрузка последней игры
-                    UpdateMap(); // Обновление карты
-                    break;
-                case 2: // Пункт меню "Выйти из игры"
-                    Console.WriteLine("До следующей игры!"); // Отображение сообщения о выходе из игры
-                    Environment.Exit(0); // Выход из приложения
-                    break;
-            }
-            Console.ReadKey(true); // Ожидание нажатия клавиши
-        }
-        
         static void Centertext(string text, int y) // Сделано для оформления по середине
         {
             int centerX = Console.WindowWidth / 2 - text.Length / 2; // Вычисление координаты X для выравнивания текста по центру
